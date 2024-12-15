@@ -1,0 +1,261 @@
+<!DOCTYPE html d>
+<html d lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dwyth Jacob Salmorin's Website</title>
+
+    <!-- Basic Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #4e54c8, #8f94fb); /* Blue to purple gradient */
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background Decoration */
+        .background-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/brick-wall-1.png');
+            opacity: 0.2;
+            pointer-events: none;
+            background-size: 50px 50px;
+            animation: backgroundMove 60s linear infinite;
+        }
+
+        @keyframes backgroundMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        nav a.active {
+            background-color: #8f94fb;
+            color: white;
+        }
+
+        .content {
+            display: none; /* Hide all sections by default */
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.1); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        #home {
+            display: block; /* Show Home by default */
+        }
+
+        .content h2 {
+            margin-top: 0;
+            font-size: 2em;
+        }
+
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .content ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        .content li {
+            font-size: 1.1em;
+        }
+
+        #about img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #8f94fb;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+        }
+
+        .skill-list, .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item, .project-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Updated Links Style for Better Visibility */
+        .content a {
+            color: #8f94fb;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .content a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content {
+                width: 90%;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav a {
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Decoration -->
+    <div class="background-decoration"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>Dwyth Jacob Salmorin</h1>
+        <p>Welcome to my personal website</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="javascript:void(0)" onclick="showSection('home')" class="active">Home</a>
+        <a href="javascript:void(0)" onclick="showSection('about')">About Me</a>
+        <a href="javascript:void(0)" onclick="showSection('skills')">Skills</a>
+        <a href="javascript:void(0)" onclick="showSection('projects')">Projects</a>
+        <a href="javascript:void(0)" onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div id="home" class="content">
+        <h2>Home</h2>
+        <p>Hello, I'm <strong>Dwyth Jacob Salmorin</strong>, a passionate web developer. This is my personal website where I share information about myself, my skills, and how you can get in touch with me. Feel free to explore!</p>
+    </div>
+
+    <div id="about" class="content">
+        <h2>About Me</h2>
+        <img src="https://example.com/your-image.jpg" alt="Dwyth Jacob Salmorin"> <!-- Update to the correct image URL -->
+        <p>I am a passionate web developer with a strong interest in building user-friendly websites and applications. I have experience working with HTML, CSS, JavaScript, and other technologies. My goal is to continually improve my skills and build projects that have a positive impact.</p>
+        <p>In my free time, I enjoy coding, reading tech blogs, and exploring new frameworks. I'm always open to collaborating with like-minded individuals or organizations to create something impactful.</p>
+    </div>
+
+    <div id="skills" class="content">
+        <h2>Skills</h2>
+        <div class="skill-list">
+            <div class="skill-item"><strong>HTML5</strong></div>
+            <div class="skill-item"><strong>CSS3</strong></div>
+            <div class="skill-item"><strong>JavaScript</strong></div>
+            <div class="skill-item"><strong>React.js</strong></div>
+            <div class="skill-item"><strong>Node.js</strong></div>
+            <div class="skill-item"><strong>Python</strong></div>
+            <div class="skill-item"><strong>SQL</strong></div>
+            <div class="skill-item"><strong>Git & GitHub</strong></div>
+        </div>
+    </div>
+
+    <div id="projects" class="content">
+        <h2>Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <h3>Portfolio Website</h3>
+                <p>A personal portfolio website to showcase my skills and projects. Built with HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="project-item">
+                <h3>Weather App
